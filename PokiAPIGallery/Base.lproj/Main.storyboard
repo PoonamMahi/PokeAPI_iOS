@@ -1,46 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zmK-yc-WCn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Pokémøn-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PokiAPIGallery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PokiAPIGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pq6-ce-g0P">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="5EJ-wO-sjl"/>
-                                    <constraint firstAttribute="height" constant="128" id="xhe-Wj-lj6"/>
-                                </constraints>
-                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vcF-wg-e31">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tzJ-D5-bZC">
+                                    <size key="itemSize" width="405" height="206"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeImageCollectionViewCell" id="dIV-zs-pkc" customClass="PokeImageCollectionViewCell" customModule="PokiAPIGallery" customModuleProvider="target">
+                                        <rect key="frame" x="4.5" y="0.0" width="405" height="206"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EgZ-al-RXi">
+                                            <rect key="frame" x="0.0" y="0.0" width="405" height="206"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vzc-RN-VyB">
+                                                    <rect key="frame" x="102.5" y="28" width="200" height="150"/>
+                                                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="rFd-oP-JV3"/>
+                                                        <constraint firstAttribute="width" constant="200" id="uyV-ub-mYM"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW3-VN-aKH">
+                                                    <rect key="frame" x="307.5" y="87.5" width="47" height="31"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system" title=" "/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vzc-RN-VyB" firstAttribute="centerX" secondItem="EgZ-al-RXi" secondAttribute="centerX" id="Ah1-wi-gsb"/>
+                                                <constraint firstItem="IW3-VN-aKH" firstAttribute="centerY" secondItem="Vzc-RN-VyB" secondAttribute="centerY" id="HWM-Zu-efv"/>
+                                                <constraint firstItem="IW3-VN-aKH" firstAttribute="leading" secondItem="Vzc-RN-VyB" secondAttribute="trailing" constant="5" id="gFI-FO-Z3q"/>
+                                                <constraint firstItem="Vzc-RN-VyB" firstAttribute="centerY" secondItem="EgZ-al-RXi" secondAttribute="centerY" id="irn-tj-I03"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="405" height="206"/>
+                                        <connections>
+                                            <outlet property="deleteImageButton" destination="IW3-VN-aKH" id="esw-Gs-S2R"/>
+                                            <outlet property="pokeimage" destination="Vzc-RN-VyB" id="neg-Xc-53c"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Pq6-ce-g0P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R4Q-c5-no7"/>
-                            <constraint firstItem="Pq6-ce-g0P" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bYt-OM-tte"/>
+                            <constraint firstItem="vcF-wg-e31" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5jW-dv-Paa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vcF-wg-e31" secondAttribute="bottom" id="QWR-22-MCO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vcF-wg-e31" secondAttribute="trailing" id="YWT-Sp-zTh"/>
+                            <constraint firstItem="vcF-wg-e31" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xk5-MW-ZLb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="My Pokémøn" id="HVd-D6-PBz"/>
                     <connections>
-                        <outlet property="pokeimage" destination="Pq6-ce-g0P" id="ilN-Tj-bCq"/>
+                        <outlet property="collectionView" destination="vcF-wg-e31" id="uBi-c4-Amh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="98"/>
+            <point key="canvasLocation" x="1023.1884057971015" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a0e-VT-8vu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zmK-yc-WCn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KNu-vf-pl1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Q4u-fP-KSm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAB-eS-qDm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

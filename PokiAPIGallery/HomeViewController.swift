@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  PokiAPIGallery
 //
 //  Created by Cambrian on 2022-03-21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var pokeimage: UIImageView!
     override func viewDidLoad() {
