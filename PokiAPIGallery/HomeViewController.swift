@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupCollectionView()
+        getAllPokemonImages()
     }
     
     /** Setting up collection view UI */
@@ -89,10 +90,23 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
     }
-    
-    
-    
 }
+    
+   
+    //MARK:- Api calls
+    extension HomeViewController {
+        
+        /** **getAllPokemonImages** func  is to get all pokemon images by calling pokeapi. */
+        func getAllPokemonImages() {
+            
+            PokeAPIHelper.fetchAllImages { images in
+                self.pokeImageArr = images
+                self.collectionView.reloadData()
+            }
+            
+        }
+    }
+
 
 
 
